@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="QPBO">
+      <UniqueIdentifier>{52ac9c76-d081-4ebd-88d1-1b74ef248aa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="glog">
+      <UniqueIdentifier>{5d9e6cf6-4958-47f2-abfc-1eb2dabc566f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoAbstraction.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="bgfg_vibe.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vibe.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="QPBO.cpp">
+      <Filter>QPBO</Filter>
+    </ClCompile>
+    <ClCompile Include="QPBO_extra.cpp">
+      <Filter>QPBO</Filter>
+    </ClCompile>
+    <ClCompile Include="QPBO_maxflow.cpp">
+      <Filter>QPBO</Filter>
+    </ClCompile>
+    <ClCompile Include="QPBO_postprocessing.cpp">
+      <Filter>QPBO</Filter>
+    </ClCompile>
+    <ClCompile Include="vibe_bgs.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UserVideoAbstraction.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bgfg_vibe.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vibe.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="QPBO.h">
+      <Filter>QPBO</Filter>
+    </ClInclude>
+    <ClInclude Include="block.h">
+      <Filter>QPBO</Filter>
+    </ClInclude>
+    <ClInclude Include="glog\log_severity.h">
+      <Filter>glog</Filter>
+    </ClInclude>
+    <ClInclude Include="glog\logging.h">
+      <Filter>glog</Filter>
+    </ClInclude>
+    <ClInclude Include="glog\raw_logging.h">
+      <Filter>glog</Filter>
+    </ClInclude>
+    <ClInclude Include="glog\stl_logging.h">
+      <Filter>glog</Filter>
+    </ClInclude>
+    <ClInclude Include="glog\vlog_is_on.h">
+      <Filter>glog</Filter>
+    </ClInclude>
+    <ClInclude Include="vibe_bgs.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoAbstraction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UserVideoAbstraction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="another.txt" />
+    <None Include="mat多通道操作.txt" />
+    <None Include="ReadMe.txt" />
+    <None Include="废弃代码.txt" />
+    <None Include="..\..\..\..\..\Desktop\MRF2.2\Makefile" />
+    <None Include="..\..\..\..\..\Desktop\MRF2.2\README.txt" />
+    <None Include="instances.inc">
+      <Filter>QPBO</Filter>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="测试代码.txt" />
+    <None Include="ClassDiagram2.cd" />
+  </ItemGroup>
+</Project>
