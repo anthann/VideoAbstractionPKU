@@ -405,7 +405,7 @@ int main(){
 		cout<<"Please input the choice No. : ";
 		cin>>choice;
 		if(choice== 1 || choice == 2 || choice == 3 || choice == 4){
-			boost::thread test1(testmultithread,"test/", "高档小区.avi", config_name, result_name, 2199, 8, 1, choice);
+			boost::thread test1(testmultithread,"D:\\workspace\\data\\videoabstract\\", "AA000805.mp4", config_name, result_name, 2199, 8, 1, choice);
 			test1.join();
 			cout<<"finish step "<<choice<<endl;
 		}

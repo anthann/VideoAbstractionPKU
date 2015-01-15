@@ -17,7 +17,7 @@
       <UniqueIdentifier>{52ac9c76-d081-4ebd-88d1-1b74ef248aa1}</UniqueIdentifier>
     </Filter>
     <Filter Include="glog">
-      <UniqueIdentifier>{5d9e6cf6-4958-47f2-abfc-1eb2dabc566f}</UniqueIdentifier>
+      <UniqueIdentifier>{beb96527-fb3b-43bf-8382-2f31a3f649e1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +65,15 @@
     <ClInclude Include="block.h">
       <Filter>QPBO</Filter>
     </ClInclude>
+    <ClInclude Include="vibe_bgs.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoAbstraction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UserVideoAbstraction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
     <ClInclude Include="glog\log_severity.h">
       <Filter>glog</Filter>
     </ClInclude>
@@ -79,15 +88,6 @@
     </ClInclude>
     <ClInclude Include="glog\vlog_is_on.h">
       <Filter>glog</Filter>
-    </ClInclude>
-    <ClInclude Include="vibe_bgs.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="VideoAbstraction.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="UserVideoAbstraction.h">
-      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

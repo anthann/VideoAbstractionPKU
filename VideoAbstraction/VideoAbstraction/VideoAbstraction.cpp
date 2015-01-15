@@ -175,7 +175,7 @@ void VideoAbstraction::stitch(Mat &input1,Mat &input2,Mat &output,Mat &back,Mat 
 		start = start/framePerSecond;
 		end = end/framePerSecond;
 		vector<vector<Point>> m_contours;
-		vector<Point> info(0,0);
+		vector<Point> info;
 		findContours(mask,m_contours,CV_RETR_EXTERNAL,CV_CHAIN_APPROX_NONE);
 		vector<vector<Point>>::const_iterator itc=m_contours.begin();
 
@@ -1063,4 +1063,73 @@ void VideoAbstraction::writeMask(Mat& input, Mat& output, int index){
 				//ptr_output[jj]=index;
 		}
 	}
+}
+
+
+bool VideoAbstraction::saveContorsOfResultFrameToFile(int frame_Num, cv::Mat& mask, int indexOfMask){
+	char fileName[100];
+	std::sprintf(fileName, "%d.txt", frame_Num);
+	std::ofstream outfile(fileName, ios::ate);
+	std::vector<std::vector<cv::Point> >contours;
+	cv::findContours(mask, contours, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_NONE);
+	outfile << indexOfMask << " " << contorsToString(contours) << std::endl;
+	outfile.close();
+	return true;
+}
+
+
+cv::Mat VideoAbstraction::loadContorsOfResultFrameFromFile(int frame_Num, int width, int height, vector<int>& lookupTable){
+	lookupTable.clear();
+	lookupTable.push_back(-1);//
+
+	cv::Mat resultMask(width, height, CV_8UC1, Scalar::all(0));
+	char fileName[100];
+	std::sprintf(fileName, "%d.txt", frame_Num);
+	std::ifstream infile(fileName);
+
+	std::string line;
+	while (std::getline(infile, line))
+	{
+		std::stringstream ss(line);
+		std::string sContors;
+		int indexOfMask = -1;
+		ss << indexOfMask;//每行第一个数值为事件标号，后面为Contors定点坐标
+		if (indexOfMask != lookupTable.back())
+			lookupTable.push_back(indexOfMask);
+
+		std::getline(ss, sContors);
+		std::vector<std::vector<cv::Point> >contours = stringToContors(sContors);
+		cv::Mat mask(width, height, CV_8UC1, Scalar::all(0));
+		cv::drawContours(mask, contours, -1, Scalar(255), -1);
+		restoreMaskOfFram(resultMask, mask, lookupTable.size());
+	}
+
+	infile.close();
+	return resultMask;
+}
+
+bool restoreMaskOfFram(cv::Mat& FrameMask, cv::Mat& oneContors, int index){
+	int nc = FrameMask.cols;
+	int nl = FrameMask.rows;
+	if (oneContors.cols != nc || oneContors.rows != nl)
+		return false;
+	if (FrameMask.isContinuous() && oneContors.isContinuous())
+	{
+		nc = nc * nl;
+		nl = 1;
+	}
+	for (int j = 0; j < nl; ++j)
+	{
+		uchar* c_data = oneContors.ptr<uchar>(j);
+		uchar* m_data = FrameMask.ptr(j);
+		for (int i = 0; i < nc; ++i)
+		{
+			if (*c_data++ != 0)
+			{
+				*m_data++ = index;
+			}
+		}
+	}
+
+	return true;
 }
